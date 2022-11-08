@@ -2,6 +2,7 @@
   <div
     class="dskApp"
     :class="displayMode"
+    v-show="Display"
     @mousedown="dskAppMouseDown"
     @mouseup="dskAppMouseUp"
     @mouseleave="dskAppMouseLeave"
@@ -19,7 +20,8 @@ export default {
   props: {
     appName: String, // 应用名称：显示在桌面图标下方
     imgUrl: String, // 应用图标URL
-    displayMode: String, // 显式模式：大/中/小图标
+    displayMode: String, // 显式模式：大/中/小图标  不显示
+    Display: Boolean, // 是否显示桌面图标
   },
   data() {
     return {

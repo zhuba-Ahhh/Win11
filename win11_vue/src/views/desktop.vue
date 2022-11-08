@@ -13,6 +13,7 @@
         <!-- 桌面图标列表组件 -->
         <AppList
           :displayMode="displayMode"
+          :Display="Display"
           :sortMethod="sortMethod"
           @contextmenu.stop.prevent="iconMenu"
           @winStateChange="winStateChange"
@@ -165,6 +166,7 @@ export default {
     return {
       //#region  DeskApp 控制的 data
       displayMode: "small", // 控制桌面图标大小：small 小图标（默认） middle 中图标 big 大图标
+      Display: true, // 控制桌面图标是否显示
       sortMethod: "date", // 控制图标排序方式：size 按大小 date 按时间 name 按名称
       currentZIndex: 1,
       currentFile: {}, // 记事本当前文件
@@ -379,7 +381,8 @@ export default {
       // iconSize 要切换成的图标尺寸：0 小图标 1 中图标 2 大图标
       if (iconSize === 0) this.displayMode = "small";
       else if (iconSize === 1) this.displayMode = "middle";
-      else this.displayMode = "big";
+      else if (iconSize === 2) this.displayMode = "big";
+      else this.Display = !this.Display;
     },
     // 请在右键菜单子组件的切换图标排列方式的事件函数中使用 $emit 调用该函数以调整桌面图标排列方式
     changeDeskIconSort(sortMethod) {

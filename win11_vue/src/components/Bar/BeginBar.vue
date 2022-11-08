@@ -149,6 +149,20 @@ export default {
           click: this.openApp,
           openkey: "pdf",
         },
+        {
+          name: "计算器",
+          icon: require("@/assets/img/appIcons/calculator.png"),
+          active: false,
+          click: this.openApp,
+          openkey: "Counter ",
+        },
+        {
+          name: "终端",
+          icon: require("@/assets/img/appIcons/terminal.png"),
+          active: false,
+          click: this.openApp,
+          openkey: "Terminal",
+        },
       ],
 
       recommendedApps: [
@@ -197,6 +211,20 @@ export default {
           active: false,
           click: this.openApp,
           openkey: "pdf",
+        },
+        {
+          name: "计算器",
+          icon: require("@/assets/img/appIcons/calculator.png"),
+          active: false,
+          click: this.openApp,
+          openkey: "Counter",
+        },
+        {
+          name: "终端",
+          icon: require("@/assets/img/appIcons/terminal.png"),
+          active: false,
+          click: this.openApp,
+          openkey: "Terminal",
         },
       ],
     };

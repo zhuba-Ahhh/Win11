@@ -73,7 +73,7 @@ export default {
           break;
         case 4:
           this.detailTop = 2.73;
-          this.detail = ["文件夹", "快捷方式", "文本文档", "markdowm"]; // 这里的映射有点问题哈
+          this.detail = ["文件夹", "快捷方式", "文本文档", "MarkDowm"]; // 这里的映射有点问题哈
           break;
       }
     },

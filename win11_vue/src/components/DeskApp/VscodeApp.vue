@@ -32,11 +32,7 @@
           />
         </div>
         <div class="closebtn" @click="clickCloseBtn">
-          <img
-            width="8"
-            src="@/assets/img/appIcons/close_light.png"
-            alt=""
-          />
+          <img width="8" src="@/assets/img/appIcons/close_light.png" alt="" />
         </div>
       </div>
     </div>
@@ -65,7 +61,7 @@ export default {
     // 监视浏览器首次打开，在首次打开时再加载页面
     winHide(nvalue) {
       if (nvalue === "false" && this.frameURL === "")
-        this.frameURL = "https://github1s.com/DiF1202/win11_vue/";
+        this.frameURL = "https://github1s.com/zhuba-Ahhh/Win11";
     },
   },
   methods: {

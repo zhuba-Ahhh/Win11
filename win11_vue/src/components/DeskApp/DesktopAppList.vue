@@ -5,6 +5,7 @@
       :appName="ap.appName"
       :imgUrl="imgUrl(ap.description)"
       :displayMode="displayMode"
+      :Display="Display"
       :key="index"
       @click="openApp"
       :id="ap.description"
@@ -29,6 +30,7 @@ export default {
   props: {
     displayMode: String, // 图标显示模式：big 大图标 middle 中图标 small 小图标
     sortMethod: String, // 图标排序方式：size 按大小 date 按时间 name 按名称
+    Display: Boolean, // 是否显示桌面图标
   },
   components: { Item, NewItem },
   data() {
@@ -85,6 +87,12 @@ export default {
           date: "2021-11-14 00:00:00",
         },
         {
+          appName: "计算器",
+          description: "calculator",
+          size: 2,
+          date: "2021-11-12 00:00:00",
+        },
+        {
           appName: "项目介绍.txt",
           description: "txt/项目介绍.txt",
           size: 999,
@@ -104,7 +112,7 @@ export default {
         computer: "",
         explorer: "",
         bin: "",
-        github: "https://github.com/DiF1202/win11_vue",
+        github: "https://github.com/zhuba-Ahhh/Win11",
         pdf: "",
         store: "",
       },
@@ -174,7 +182,7 @@ export default {
             this.newFileNum.folder++;
           } else appName = fileName + " (1)";
         } else {
-          if (fileName === "新建 txt 文件.txt") {
+          if (fileName === "新建txt文件.txt") {
             appName = "新建 txt 文件 (" + this.newFileNum.txt + ").txt";
             this.newFileNum.txt++;
           } else
