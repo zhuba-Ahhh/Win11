@@ -2,7 +2,7 @@
 
 <div>
 	<img src="/win11_vue/src/assets/img/login/rootscreen.png" width=50%>
-    <img src="https://raw.githubusercontent.com/zhuba-Ahhh/Zhuba/main/202211090900214.png" width=50%>
+    	<img src="https://raw.githubusercontent.com/zhuba-Ahhh/Zhuba/main/202211090900214.png" width=25%>
 </div>
 
 
