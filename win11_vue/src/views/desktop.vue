@@ -143,6 +143,7 @@ import PdfApp from "@/components/LoginActivity/PdfApp.vue";
 import ComputerApp from "@/components/KeyApp/ComputerApp.vue";
 import BeginBar from "@/components/Bar/BeginBar.vue";
 import StoreApp from "@/components/LoginActivity/StoreApp.vue";
+import CalculatorApp from "@/components/DeskApp/CalculatorApp.vue";
 export default {
   name: "desktop",
   components: {
@@ -161,6 +162,7 @@ export default {
     PdfApp,
     BeginBar,
     StoreApp,
+    CalculatorApp,
   },
   data() {
     return {
@@ -296,6 +298,7 @@ export default {
         case 4:
           if (idx == 0) this.newFile("folder");
           if (idx == 2) this.newFile("txt");
+          if (idx == 3) this.newFile("markdown");
           break;
         case 5:
           this.changeBg();
@@ -393,7 +396,7 @@ export default {
     },
     // 请在右键菜单子组件的新建文件、文件夹的事件函数中使用 $emit 调用该函数
     newFile(fileType) {
-      // fileType 新建的文件类型："folder" 文件夹 "txt" txt文件
+      // fileType 新建的文件类型："folder" 文件夹 "txt" txt文件 "md" markdown文件
       this.$refs["appList"].createNewItem(fileType);
     },
 

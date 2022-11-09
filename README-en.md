@@ -1,12 +1,12 @@
-# Win11 in Web
+<h1>Win11 in Web</h1>
 
 <div>
 	<img src="/win11_vue/src/assets/img/login/rootscreen.png">
 </div>
 
-简体中文 | [English](./README-en.md)
+[简体中文](./README.md) | English
 
-# 💎演示
+## 💎Demo
 
 ### [Vue3.0](./win11_vue/README.md)
 
@@ -20,11 +20,13 @@
 
 - [ ] 待完成
 
-# 🎈证书
+## 🎈License
 
-Win11 in Web 使用 [MIT License](https://github.com/rabbitandcat/fat-netdisk/blob/master/LICENSE).
+Win11 in Web uses [MIT License](https://github.com/rabbitandcat/fat-netdisk/blob/master/LICENSE).
 
-## 参考学习
+## Reference to study
 
-[blueedgetechno/win11React: Windows 11 in React 💻🌈⚡](https://github.com/blueedgetechno/win11React)
+[blueedgetechno/win11React: Windows 11 in React 💻🌈⚡](
+
+
 

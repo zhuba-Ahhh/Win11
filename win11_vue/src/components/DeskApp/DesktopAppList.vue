@@ -140,6 +140,8 @@ export default {
       if (imgName.indexOf("/") + 1) {
         if (imgName.split("/")[0][0] === "t")
           return require("@/assets/img/appIcons/txt.png");
+        else if (imgName.split("/")[0][0] === "m")
+          return require("@/assets/img/appIcons/readme.png");
         else return require("@/assets/img/appIcons/folder.png");
       } else return require("@/assets/img/appIcons/" + imgName + ".png");
     },
@@ -181,12 +183,18 @@ export default {
             appName = "新建文件夹 (" + this.newFileNum.folder + ")";
             this.newFileNum.folder++;
           } else appName = fileName + " (1)";
-        } else {
-          if (fileName === "新建txt文件.txt") {
-            appName = "新建 txt 文件 (" + this.newFileNum.txt + ").txt";
+        } else if (fileType === "txt") {
+          if (fileName === "新建文本文档.txt") {
+            appName = "新建文本文档 (" + this.newFileNum.txt + ").txt";
             this.newFileNum.txt++;
           } else
             appName = fileName.substr(0, fileName.length - 4) + " (1)" + ".txt";
+        } else {
+          if (fileName === "README.md") {
+            appName = "README (" + this.newFileNum.txt + ").md";
+            this.newFileNum.txt++;
+          } else
+            appName = fileName.substr(0, fileName.length - 4) + " (1)" + ".md";
         }
       }
       this.ifNewFile = false;
@@ -206,19 +214,6 @@ export default {
         }
       }
     },
-    // 测试函数
-    // test1() {
-    //   this.createNewItem("folder");
-    // },
-    // test2() {
-    //   this.createNewItem("txt");
-    // },
-    // test3() {
-    //   if (this.displayMode === "small") this.$emit("changeDeskIconSize", 1);
-    //   else if (this.displayMode === "middle")
-    //     this.$emit("changeDeskIconSize", 2);
-    //   else this.$emit("changeDeskIconSize", 0);
-    // },
   },
 };
 </script>

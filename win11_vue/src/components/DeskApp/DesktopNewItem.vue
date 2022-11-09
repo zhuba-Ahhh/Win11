@@ -31,7 +31,8 @@ export default {
   data() {
     let appName;
     if (this.fileType === "folder") appName = "新建文件夹";
-    else appName = "新建 txt 文件.txt";
+    else if (this.fileType === "txt") appName = "新建文本文档.txt";
+    else if (this.fileType === "markdown") appName = "README.md";
     return {
       appName,
       imgClass: "normal",

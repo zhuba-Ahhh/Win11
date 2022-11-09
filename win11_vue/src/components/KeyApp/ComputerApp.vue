@@ -47,7 +47,6 @@
                     查看
                     <img width="8" src="@/assets/img/taskbarIcons/arrowdown.png"/>
                 </div>
-                
             </div>
             <div class="bin-memu-other">
                 <img src="@/assets/img/menuIcons/binMenuOther.png">
@@ -77,17 +76,15 @@
                     </div>
                 </div>
                 <div class="bin-main-container">
-                    
-                    <div 
+                    <div
                         class="bin-main-navBar"
-                        
                     >
                         <div
                             v-for="(item,index) in list"
-                            :key="index"                            
+                            :key="index"
                         >
-                            <div 
-                                class="list-title" 
+                            <div
+                                class="list-title"
                                 @click="handleListShow(index)"
                             >
                                 <img v-if="item.isShow" width="10" src="@/assets/img/binIcons/shortArrowDown.png"/>
@@ -100,14 +97,12 @@
                                 :key="indexC" 
                                 v-show="list[index].isShow"
                             >
-                        
                                 <div>
                                     <img width="18" v-bind:src="child.icon"/>
                                     <span>{{child.name}}</span>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                     <div class="bin-main-content">
                         <div class="floder">
@@ -123,7 +118,7 @@
                                 >
                                     <img width="42" v-bind:src="item.icon"/>
                                     <span>{{item.name}}</span>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                         <div class="device">
@@ -133,7 +128,7 @@
                                 <div></div>
                             </div>
                             <div class="device-content">
-                                <div 
+                                <div
                                     class="device-item"
                                     v-for="item,index in device"
                                     :key="index"
@@ -144,8 +139,7 @@
                                         <img width="190" src="@/assets/img/binIcons/processBar.png">
                                         <span>151 GB 可用, 共 280 GB</span>
                                     </div>
-                                </div>                     
-                                
+                                </div>
                             </div>
                         </div>
                     </div>
