@@ -190,7 +190,7 @@ export default {
           } else
             appName = fileName.substr(0, fileName.length - 4) + " (1)" + ".txt";
         } else {
-          if (fileName === "README.md") {
+          if (fileName === "README .md") {
             appName = "README (" + this.newFileNum.txt + ").md";
             this.newFileNum.txt++;
           } else

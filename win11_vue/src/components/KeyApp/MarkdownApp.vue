@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/_window.scss";
+@import "@/assets/scss/_window.scss";
 
 .markdown {
   --bg0: #e7eaec;

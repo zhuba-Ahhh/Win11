@@ -136,76 +136,75 @@ export default {
             list: [
                 {
                     name: '快速访问',
-                    icon: require('../../assets/img/binIcons/star.png'),
+                    icon: require('@/assets/img/binIcons/star.png'),
                     isShow: true,
                     children: [
                         {
                             name: '桌面',
-                            icon: require('../../assets/img/binIcons/desktop.png'),
+                            icon: require('@/assets/img/binIcons/desktop.png'),
                         },
                         {
                             name: '下载',
-                            icon: require('../../assets/img/binIcons/download.png'),
+                            icon: require('@/assets/img/binIcons/download.png'),
                         },
                         {
                             name: '文档',
-                            icon: require('../../assets/img/binIcons/document.png'),
+                            icon: require('@/assets/img/binIcons/document.png'),
                         },
                         {
                             name: '图片',
-                            icon: require('../../assets/img/binIcons/image.png'),
+                            icon: require('@/assets/img/binIcons/image.png'),
                         }
                     ]
                 },
                 {
                     name: '此电脑',
-                    icon: require('../../assets/img/binIcons/computer.png'),
+                    icon: require('@/assets/img/binIcons/computer.png'),
                     isShow: true,
                     children: [
                         {
                             name: '视频',
-                            icon: require('../../assets/img/binIcons/radio.png'),
+                            icon: require('@/assets/img/binIcons/radio.png'),
                         },
                         {
                             name: '图片',
-                            icon: require('../../assets/img/binIcons/image.png'),
+                            icon: require('@/assets/img/binIcons/image.png'),
                         },
                         {
                             name: '文档',
-                            icon: require('../../assets/img/binIcons/document.png'),
+                            icon: require('@/assets/img/binIcons/document.png'),
                         },
                         {
                             name: '下载',
-                            icon: require('../../assets/img/binIcons/download.png'),
+                            icon: require('@/assets/img/binIcons/download.png'),
                         },
                         {
                             name: '音乐',
-                            icon: require('../../assets/img/binIcons/music.png'),
+                            icon: require('@/assets/img/binIcons/music.png'),
                         },
                         {
                             name: '桌面',
-                            icon: require('../../assets/img/binIcons/desktop.png'),
+                            icon: require('@/assets/img/binIcons/desktop.png'),
                         },
                         {
                             name: 'Windows(C:)',
-                            icon: require('../../assets/img/binIcons/cDisk.png'),
+                            icon: require('@/assets/img/binIcons/cDisk.png'),
                         },
                         {
                             name: 'Windows(D:)',
-                            icon: require('../../assets/img/binIcons/disk.png'),
+                            icon: require('@/assets/img/binIcons/disk.png'),
                         }
                     ]
                 },
                 {
                     name: '网络',
-                    icon: require('../../assets/img/binIcons/network.png'),
+                    icon: require('@/assets/img/binIcons/network.png'),
                     isShow: false,
                     children: null
-                }   
+                }
             ]
         }
     },
-            
     methods: {
          // 标题栏按钮点击事件
         clickMinBtn() {

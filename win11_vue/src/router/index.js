@@ -14,6 +14,10 @@ const routes = [{
   path: "/open",
   name: "open",
   component: () => import("@/views/open.vue"),
+}, {
+  path: "/calculator",
+  name: "calculator",
+  component: () => import("@/components/DeskApp/CalculatorApp.vue"),
 }, ];
 
 const router = createRouter({

@@ -1,7 +1,30 @@
 <template>
-  <div>
+  <div
+    class="calculator floatTab dpShadow"
+    :style="zIndex"
+    :win-size="winSize"
+    :win-max="winMax"
+    :win-hide="winHide"
+    @click="closeFileMenu"
+    @keydown.ctrl.s.prevent="saveBtnClick"
+  >
     <div class="standard-main" id="std-main">
-      <div class="title">&nbsp;&nbsp;计算器</div>
+      <div class="title">
+        <div class="toolbar">
+          &nbsp;&nbsp;计算器
+          <div class="actbtns">
+            <div class="minbtn" @click="clickMinBtn">
+              <img width="8" src="@/assets/img/appIcons/minimize.png" alt="" />
+            </div>
+            <div class="maxbtn" @click="clickMaxBtn">
+              <img width="8" src="@/assets/img/appIcons/maximize.png" alt="" />
+            </div>
+            <div class="closebtn" @click="clickCloseBtn">
+              <img width="8" src="@/assets/img/appIcons/close.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
       <!--结果显示区域-->
       <div class="result">
         <!--显示类型信息-->
@@ -20,7 +43,9 @@
             style="height: 18px"
           />
         </li>
-        <li value="20"><img src="@/assets/img/newapp/calculator/1_x.png" /></li>
+        <li value="20">
+          <img src="@/assets/img/newapp/calculator/1_x.png" />
+        </li>
       </ul>
       <!--数字和符号-->
       <ul id="std-num-symbol">
@@ -43,7 +68,7 @@
         <li value="11">±</li>
         <li class="number" value="0">0</li>
         <li value="10">.</li>
-        <li value="12">=</li>
+        <li value="12"><div class="equal">=</div></li>
       </ul>
       <!--侧边栏，选择计算器类型-->
       <ul class="type-bar" id="std-type-bar">
@@ -54,7 +79,20 @@
     </div>
     <!--科学型-->
     <div class="science-main" id="sci-main">
-      <div class="title">&nbsp;&nbsp;计算器</div>
+      <div class="toolbar">
+        &nbsp;&nbsp;计算器
+        <div class="actbtns">
+          <div class="minbtn" @click="clickMinBtn">
+            <img width="8" src="@/assets/img/appIcons/minimize.png" alt="" />
+          </div>
+          <div class="maxbtn" @click="clickMaxBtn">
+            <img width="8" src="@/assets/img/appIcons/maximize.png" alt="" />
+          </div>
+          <div class="closebtn" @click="clickCloseBtn">
+            <img width="8" src="@/assets/img/appIcons/close.png" alt="" />
+          </div>
+        </div>
+      </div>
       <!--结果显示区域-->
       <div class="sci-result">
         <!--显示类型信息-->
@@ -116,7 +154,9 @@
         <li value="5" class="number">5</li>
         <li value="6" class="number">6</li>
         <li value="14">-</li>
-        <li value="20"><img src="@/assets/img/newapp/calculator/1_x.png" /></li>
+        <li value="20">
+          <img src="@/assets/img/newapp/calculator/1_x.png" />
+        </li>
         <li value="1" class="number">1</li>
         <li value="2" class="number">2</li>
         <li value="3" class="number">3</li>
@@ -125,7 +165,7 @@
         <li value="11">±</li>
         <li value="0" class="number">0</li>
         <li value="10">.</li>
-        <li value="12">=</li>
+        <li value="12"><div class="equal">=</div></li>
       </ul>
       <!--侧边栏，选择计算器类型-->
       <ul class="type-bar" id="sci-type-bar">
@@ -136,7 +176,20 @@
     </div>
     <!--程序员型-->
     <div class="programmer-main" id="pro-main">
-      <div class="title">&nbsp;&nbsp;计算器</div>
+      <div class="toolbar">
+        &nbsp;&nbsp;计算器
+        <div class="actbtns">
+          <div class="minbtn" @click="clickMinBtn">
+            <img width="8" src="@/assets/img/appIcons/minimize.png" alt="" />
+          </div>
+          <div class="maxbtn" @click="clickMaxBtn">
+            <img width="8" src="@/assets/img/appIcons/maximize.png" alt="" />
+          </div>
+          <div class="closebtn" @click="clickCloseBtn">
+            <img width="8" src="@/assets/img/appIcons/close.png" alt="" />
+          </div>
+        </div>
+      </div>
       <!--结果显示区域-->
       <div class="pro-result">
         <!--显示类型信息-->
@@ -190,7 +243,7 @@
         <li value="22">)</li>
         <li value="0" class="number">0</li>
         <li value="10" class="disable-btn" id="pro-point">.</li>
-        <li value="12">=</li>
+        <li value="12"><div class="equal">=</div></li>
       </ul>
       <!--侧边栏，选择计算器类型-->
       <ul class="type-bar" id="pro-type-bar">
@@ -205,13 +258,83 @@
 <script>
 import "@/plugins/calculator.js";
 export default {
-  name: "CalculatorApp.vue",
+  name: "CalculatorApp",
   components: {},
 };
 </script>
 
-<
 <style lang="scss" scoped>
+@import "@/assets/scss/_window.scss";
+.equal {
+  background-color: #91dbe0;
+}
+.actbtns {
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+.toolbar {
+  background: white;
+  display: flex;
+  width: 100%;
+  height: 26px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.actbtns .minbtn,
+.actbtns .maxbtn,
+.actbtns .closebtn {
+  transition: all 60ms ease-in-out;
+  height: 100%;
+  padding: 0 14px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.minbtn:hover,
+.maxbtn:hover {
+  background-color: rgb(80, 80, 80);
+}
+.closebtn:hover {
+  background-color: rgb(255, 65, 65);
+}
+.floatTab[win-size="normal"] {
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 80%;
+}
+
+.floatTab[data-size="full"] {
+  border-radius: 0;
+}
+
+// win-max : 窗口是否最大化
+
+.floatTab[win-max="false"] {
+  top: calc(100% + 10px);
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  opacity: 0;
+  pointer-events: none;
+}
+
+// win-hide : 窗口是否隐藏
+
+.floatTab[win-hide="true"] {
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+* {
+  font-family: "微软雅黑";
+}
 .standard-main,
 .science-main,
 .programmer-main {
@@ -316,6 +439,7 @@ li img {
 #std-num-symbol li {
   line-height: 52px;
   width: 87.5px;
+  border: #4d4d4d 0px solid;
 }
 
 /*标准界面结束*/

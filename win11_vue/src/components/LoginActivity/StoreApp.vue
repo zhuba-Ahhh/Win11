@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/_window.scss";
+@import "@/assets/scss/_window.scss";
 .store {
   background-color: rgb(248, 248, 248);
 }

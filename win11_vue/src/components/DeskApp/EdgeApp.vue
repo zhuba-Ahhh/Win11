@@ -66,7 +66,7 @@
             <img src="@/assets/img/appIcons/right.png" alt="" />
           </div>
           <!-- 刷新按钮 -->
-          <div class="edgenavicon">
+          <div class="edgenavicon" @click="clickRefresh">
             <img src="@/assets/img/appIcons/refresh.png" alt="" />
           </div>
           <!-- 主页按钮 -->
@@ -152,7 +152,7 @@ export default {
         },
         {
           tittle: "Vue.js",
-          Url: "https://vuejs.org/",
+          Url: "https://cn.vuejs.org/",
         },
         {
           tittle: "React",
@@ -191,17 +191,27 @@ export default {
       this.$emit("winStateChange", "edge", 0);
     },
     clickBack() {
+      console.log(this.historyUrl);
       if (this.historyUrl.length) {
         this.goTo(this.historyUrl.pop(), true);
       }
     },
     clickForward() {
-      if (this.historyUrl.length) {
+      console.log(this.historyUrl[this.historyUrl.length - 1]);
+      console.log(this.historyUrl);
+      if (this.historyUrl.length > 0) {
         this.goTo(this.historyUrl[this.historyUrl.length - 1], true);
       }
     },
+    clickRefresh() {
+      console.log(this.historyUrl[this.historyUrl.length - 1]);
+      this.goTo(this.historyUrl[this.historyUrl.length - 1], true);
+    },
     clickHome() {
       this.goHome();
+      console.log(this.historyUrl);
+      this.historyUrl.filter((url) => url !== "https://cn.bing.com/");
+      console.log(this.historyUrl);
       this.historyUrl.push("https://cn.bing.com/");
     },
     clickEnterBtn() {
@@ -238,6 +248,10 @@ export default {
     // 图标URL生成
     bookIconUrl(title, url) {
       if (title === "Vue.js") return "favicon.ico";
+      else if (title === "我的博客")
+        return require("@/assets/img/login/rentou.jpg");
+      else if (title === "我的语雀")
+        return require("@/assets/img/appIcons/yuque.png");
       return url + "favicon.ico";
     },
   },

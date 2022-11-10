@@ -32,7 +32,7 @@ export default {
     let appName;
     if (this.fileType === "folder") appName = "新建文件夹";
     else if (this.fileType === "txt") appName = "新建文本文档.txt";
-    else if (this.fileType === "markdown") appName = "README.md";
+    else if (this.fileType === "markdown") appName = "README .md";
     return {
       appName,
       imgClass: "normal",
